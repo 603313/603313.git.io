@@ -1,0 +1,11 @@
+<html>
+<body>
+$_session = array (
+array('DoWHero'. 'DoWVillian')
+array('DoWTroops'. 'DoWVehicles')
+for ($x = 0;	$x < count($_session); $x++)
+{  echo $_session[$x]['DoWHero'];
+echo "\n"; // a newline
+);
+</body>
+<html>

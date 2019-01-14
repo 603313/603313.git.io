@@ -1,0 +1,42 @@
+<!-- this works if you have a database called login -->
+<!-- a table called login, and column headers uname and pword -->
+<!-- make sure your headers are of type VRCHAR when you set them up -->
+
+<html>
+<body>
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "login";
+	
+	$uname = $_POST["NewName"];
+	echo "Hello, ".$uname;
+$website = $_POST["NewWebsite"];
+echo "Your website is, ". $website;
+	
+	$Email = $_POST["Newemail"];
+	echo "your Email is,".$Email;
+	
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "INSERT INTO login(uname, pword) 
+VALUES ('$uname', '$pword')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+	
+?>
+</body>
+</html>
